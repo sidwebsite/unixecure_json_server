@@ -29,3 +29,11 @@ jobs:
       # Start JSON Server
       - name: Start JSON Server
         run: json-server --watch data.json --port 3000
+        
+      # Define the real API URL as an environment variable
+      - name: Set Real API URL
+        run: echo "API_BASE_URL=https://unixecureJsonServer.com" >> $GITHUB_ENV
+
+      # Use the real URL to make a GET request
+      - name: Fetch data from the real API using curl
+        run: curl $API_BASE_URL/posts

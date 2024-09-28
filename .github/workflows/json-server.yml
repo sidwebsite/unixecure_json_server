@@ -17,18 +17,18 @@ jobs:
         uses: actions/checkout@v3
 
       # # Install Node.js
-      # - name: Set up Node.js
-      #   uses: actions/setup-node@v3
-      #   with:
-      #     node-version: '18'
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18'
 
-      # # Install JSON Server
-      # - name: Install JSON Server
-      #   run: npm install -g json-server
+      # Install JSON Server
+      - name: Install JSON Server
+        run: npm install -g json-server
 
       # # Start JSON Server
-      # - name: Start JSON Server
-      #   run: json-server --watch data.json --port 3000
+      - name: Start JSON Server
+        run: json-server --watch data.json
         
       # Define the real API URL as an environment variable
       - name: Set Real API URL
